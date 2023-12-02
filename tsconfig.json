@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+
+    "jsx": "react",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "noImplicitAny": true,
+    "outDir": "./dist",
+  },
+
+  "include": ["src/**/*.ts", "src/**/*.tsx", "./global.d.ts", "./.eslintrc.cjs"],
+  "exclude": ["node_modules", "./dist", "./build"]
+}
