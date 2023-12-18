@@ -7,7 +7,23 @@ module.exports = {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: (content, loaderContext) => {
+                if (loaderContext.resourcePath.includes('src')) {
+                  return (
+                    `@use '~/styles/abstracts/variables'; @use '~/styles/abstracts/mixins';` +
+                    content
+                  )
+                }
+              }
+            }
+          }
+        ]
       }
     ]
   },

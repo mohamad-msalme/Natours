@@ -1,0 +1,18 @@
+.feature {
+  height: 95vh;
+  @include mixins.sectionBackgroundImage('nat-4');
+  clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0 100%);
+  background-size: cover;
+  background-position: top;
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    div {
+      display: flex;
+      column-gap: 3.2rem;
+    }
+  }
+}

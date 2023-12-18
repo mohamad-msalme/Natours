@@ -1,0 +1,49 @@
+.dialog {
+  background-color: rgba(variables.$white, 30%);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  transition: all 0.8s;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+
+  &__content {
+    width: 75%;
+    background-color: variables.$white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 4.2rem;
+    box-shadow: 0 2rem 4rem rgba(variables.$black, 20%);
+    border-radius: 1rem;
+
+    &__header {
+      align-self: end;
+      svg {
+        cursor: pointer;
+        width: 2.5rem;
+        &:hover {
+          color: variables.$color-primary;
+          transform: translateY(-1px);
+        }
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

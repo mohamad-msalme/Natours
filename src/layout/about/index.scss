@@ -1,0 +1,66 @@
+@mixin aboutImg() {
+  width: 55%;
+  cursor: pointer;
+  position: absolute;
+  transition: all 0.3s;
+  border-radius: 2px;
+  box-shadow: 0 1.5rem 4rem rgba(variables.$black, 40%);
+  outline-offset: 1rem;
+
+  &:hover {
+    outline: 1rem solid variables.$color-primary;
+    border-radius: 2rem;
+    box-shadow: 0 2.5rem 4rem rgba(variables.$black, 50%);
+    transform: scale(1.05);
+    z-index: 1;
+  }
+}
+
+.about {
+  height: fit-content;
+
+  .grid {
+    row-gap: 6.2rem;
+    column-gap: 3.2rem;
+  }
+
+  .heading-secondary {
+    grid-column: 1 / -1;
+  }
+
+  .heading-tertiary {
+    margin-bottom: 1.6rem;
+  }
+
+  .body2 {
+    margin-bottom: 3.2rem;
+  }
+
+  &__img-box {
+    position: relative;
+
+    & div:hover .about-img:not(:hover) {
+      transform: scale(0.9);
+    }
+
+    &--img-1 {
+      @include aboutImg();
+      left: 0;
+      top: 0;
+    }
+
+    &--img-2 {
+      @include aboutImg();
+
+      right: 0;
+      top: 2rem;
+    }
+
+    &--img-3 {
+      @include aboutImg();
+
+      left: 20%;
+      top: 10rem;
+    }
+  }
+}

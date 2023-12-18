@@ -1,0 +1,129 @@
+@mixin pictureBackgroundImage($color1, $color2, $imageName) {
+  @if $imageName {
+    background-image: linear-gradient(to right bottom, $color1, $color2),
+      url('~/assets/images/#{$imageName}.jpg');
+  } @else {
+    background-image: linear-gradient(to right bottom, $color1, $color2);
+  }
+}
+
+.card {
+  -moz-perspective: 150rem;
+  perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  &__side {
+    height: 100%;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden; /* Safari */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+
+    &--front {
+      background-color: variables.$white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .card__price {
+        color: variables.$white;
+        text-align: center;
+        &--only {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.75px;
+        }
+        &--value {
+          font-size: 6rem;
+          font-weight: 100;
+          margin-bottom: 3.2rem;
+        }
+      }
+      &--1 {
+        @include pictureBackgroundImage(#ffb900d9, #ff7730d9, null);
+      }
+      &--2 {
+        @include pictureBackgroundImage(#7ed56fd9, #28b485d9, null);
+      }
+      &--3 {
+        @include pictureBackgroundImage(#2998ffd9, #5643fad9, null);
+      }
+    }
+  }
+
+  &__picture {
+    background-blend-mode: screen;
+    height: 23rem;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+    &--1 {
+      @include pictureBackgroundImage(#ffb900, #ff7730, 'nat-5');
+    }
+    &--2 {
+      @include mixins.sectionBackgroundImage('nat-6');
+    }
+
+    &--3 {
+      @include pictureBackgroundImage(#2998ff, #5643fa, 'nat-7');
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: variables.$white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 70%;
+
+    &--title {
+      padding: 1rem 1.5rem;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+
+      &--1 {
+        @include pictureBackgroundImage(#ffb900d9, #ff7730d9, null);
+      }
+      &--2 {
+        @include pictureBackgroundImage(#7ed56fd9, #28b485d9, null);
+      }
+      &--3 {
+        @include pictureBackgroundImage(#2998ffd9, #5643fad9, null);
+      }
+    }
+  }
+
+  .card__details {
+    padding: 3rem;
+    text-align: center;
+    li {
+      padding: 1rem;
+      border-bottom: 1px solid variables.$color-grey-lighter;
+    }
+    li:last-child {
+      border: none;
+    }
+  }
+}

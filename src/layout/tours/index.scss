@@ -1,0 +1,17 @@
+.tours {
+  padding-bottom: 8.4rem;
+
+  .grid {
+    row-gap: 6.2rem;
+    column-gap: 4.6rem;
+  }
+
+  .heading-secondary {
+    grid-column: 1 / -1;
+  }
+
+  .btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}

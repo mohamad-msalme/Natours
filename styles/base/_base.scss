@@ -1,0 +1,22 @@
+@use '../abstracts/variables';
+
+html {
+  font-size: 62.52%;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+}
+
+#root {
+  background-color: variables.$color-grey-light;
+  max-width: 180rem;
+  margin: 0 auto;
+}
+
+::selection {
+  color: variables.$white;
+  background-color: variables.$color-primary;
+}

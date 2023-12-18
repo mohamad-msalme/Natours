@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2019",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "ESNext",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "moduleResolution": "Bundler",
 
     "jsx": "react",
@@ -13,11 +13,22 @@
     "strict": true,
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
     "noImplicitAny": true,
+    "baseUrl": ".",
     "outDir": "./dist",
+    "paths": {
+      "pages/*": ["src/pages/*"],
+      "hooks/*": ["src/hooks/*"],
+      "layout/*": ["src/layout/*"],
+      "components/*": ["src/components/*"]
+    }
   },
 
-  "include": ["src/**/*.ts", "src/**/*.tsx", "./global.d.ts", "./.eslintrc.cjs"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "./global.d.ts",
+    "./.eslintrc.cjs"
+  ],
   "exclude": ["node_modules", "./dist", "./build"]
 }

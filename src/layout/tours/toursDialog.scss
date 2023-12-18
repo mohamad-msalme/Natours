@@ -1,0 +1,47 @@
+.tours-dialog {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 6.2rem;
+
+  &__aside {
+    align-self: center;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+  .heading-secondary {
+    text-align: left;
+    margin-bottom: 3.2rem;
+  }
+
+  .heading-tertiary {
+    text-align: left;
+    margin-bottom: 2.4rem;
+  }
+
+  .divider {
+    width: 1px;
+    background-color: variables.$color-grey-lighter;
+    color: variables.$color-grey-lighter;
+  }
+
+  &__text-box {
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+    column-gap: 1.6rem;
+    &--text {
+      text-align: justify;
+      font-size: 1.4rem;
+    }
+  }
+  .btn {
+    align-self: center;
+    margin-top: auto;
+  }
+}

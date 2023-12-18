@@ -1,5 +1,3 @@
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
@@ -9,7 +7,23 @@ module.exports = {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: (content, loaderContext) => {
+                if (loaderContext.resourcePath.includes('src')) {
+                  return (
+                    `@use '~/styles/abstracts/variables'; @use '~/styles/abstracts/mixins';` +
+                    content
+                  )
+                }
+              }
+            }
+          }
+        ]
       }
     ]
   },

@@ -11,6 +11,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      pages: path.join(__dirname, 'src/pages'),
+      hooks: path.join(__dirname, 'src/hooks'),
+      layout: path.join(__dirname, 'src/layout'),
+      components: path.join(__dirname, 'src/components')
+    }
   },
   module: {
     rules: [
@@ -20,7 +26,7 @@ module.exports = {
         use: 'ts-loader'
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|mp4)$/i,
         type: 'asset/resource'
       }
     ]

@@ -1,0 +1,29 @@
+.feature__card {
+  cursor: pointer;
+  display: flex;
+  padding: 2.5rem;
+  border-radius: 3px;
+  align-items: center;
+  transition: all 0.3s;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgba(variables.$color-grey-light, 80%);
+  box-shadow: 0 1.5rem 4rem rgba(variables.$black, 15%);
+
+  svg {
+    margin-bottom: 1rem;
+  }
+
+  .heading-tertiary {
+    margin-bottom: 1rem;
+  }
+
+  .feature__card--description {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &:hover {
+    transform: translateY(-1rem) scale(1.04);
+  }
+}
