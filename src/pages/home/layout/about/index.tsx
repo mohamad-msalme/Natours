@@ -1,9 +1,10 @@
 import React from 'react'
 import { Button } from 'components/button'
 
-import nat1Img1 from '../../../assets/images/nat-1.jpg'
-import nat1Img2 from '../../../assets/images/nat-2.jpg'
-import nat1Img3 from '../../../assets/images/nat-3.jpg'
+import nat1Img1 from 'assets/images/nat-1.jpg'
+
+import nat1Img2 from 'assets/images/nat-2.jpg'
+import nat1Img3 from 'assets/images/nat-3.jpg'
 
 import './index.scss'
 export const About: React.FC = () => {

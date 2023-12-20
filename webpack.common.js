@@ -15,7 +15,8 @@ module.exports = {
       pages: path.join(__dirname, 'src/pages'),
       hooks: path.join(__dirname, 'src/hooks'),
       layout: path.join(__dirname, 'src/layout'),
-      components: path.join(__dirname, 'src/components')
+      components: path.join(__dirname, 'src/components'),
+      assets: path.join(__dirname, 'assets')
     }
   },
   module: {

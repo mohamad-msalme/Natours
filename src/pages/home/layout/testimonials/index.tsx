@@ -1,8 +1,8 @@
 import React from 'react'
 
-import nat8 from '../../../assets/images/nat-8.jpg'
-import nat9 from '../../../assets/images/nat-9.jpg'
-import video from '../../../assets/images/video.mp4'
+import nat8 from 'assets/images/nat-8.jpg'
+import nat9 from 'assets/images/nat-9.jpg'
+import video from 'assets/images/video.mp4'
 
 import { Button } from 'components/button'
 import { TestimonialCard } from './TestimonialCard'

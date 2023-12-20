@@ -1,0 +1,68 @@
+.input {
+  font-family: inherit;
+  color: inherit;
+  transition: all 0.3s;
+}
+
+.input--text {
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rbga(variables.$white, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  display: block;
+  transition: all 0.3s;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus:invalid {
+    border-bottom-color: variables.$color-error;
+  }
+
+  &:focus:valid {
+    border-bottom-color: variables.$color-primary;
+  }
+
+  &:not(:placeholder-shown) + .label {
+    top: 110%;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &::placeholder {
+    color: inherit;
+    font-size: inherit;
+  }
+
+  &.input--error + .label {
+    top: 110%;
+    opacity: 1;
+    pointer-events: all;
+    color: variables.$color-error;
+  }
+
+  &.input--error.input {
+    border-bottom-color: variables.$color-error;
+  }
+}
+
+.label {
+  color: inherit;
+  transition: all 0.2s;
+}
+
+.label--input-text {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  font-size: 1.2rem;
+  font-weight: 700;
+  opacity: 0;
+}

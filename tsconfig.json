@@ -20,7 +20,8 @@
       "pages/*": ["src/pages/*"],
       "hooks/*": ["src/hooks/*"],
       "layout/*": ["src/layout/*"],
-      "components/*": ["src/components/*"]
+      "components/*": ["src/components/*"],
+      "assets/*": ["assets/*"]
     }
   },
 

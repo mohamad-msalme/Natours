@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'components/button'
-import nat8 from '../../../assets/images/nat-8.jpg'
-import nat9 from '../../../assets/images/nat-9.jpg'
+import nat8 from 'assets/images/nat-8.jpg'
+import nat9 from 'assets/images/nat-9.jpg'
 
 import './toursDialog.scss'
 export const ToursDialog: React.FC = () => (

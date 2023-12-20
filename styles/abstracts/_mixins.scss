@@ -1,10 +1,18 @@
 @use './variables';
 
 @mixin sectionBackgroundImage($imageName) {
-  background-image: linear-gradient(
+  @if $imageName {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(variables.$color-primary-light, 0.8),
+        rgba(variables.$color-primary-dark, 0.8)
+      ),
+      url('~/assets/images/#{$imageName}.jpg');
+  } @else {
+    background-image: linear-gradient(
       to right bottom,
       rgba(variables.$color-primary-light, 0.8),
       rgba(variables.$color-primary-dark, 0.8)
-    ),
-    url('~/assets/images/#{$imageName}.jpg');
+    );
+  }
 }
