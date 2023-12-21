@@ -4,6 +4,7 @@ import React from 'react'
 import { Button } from 'components/button'
 import { TextInput } from 'components/text-input'
 import { isEmailValid, useForm } from './useForm'
+import { CheckBox } from 'components/checkbox'
 
 export const Form: React.FC = () => {
   const { formData, handleInputChange, isDirty, isFormInvalid, handleSubmit } =
@@ -41,24 +42,20 @@ export const Form: React.FC = () => {
         }
       />
       <div className="field-container field-container--input-checkbox">
-        <div className="wrapper">
-          <input id="Small tour group" type="checkbox" />
-          <label
-            className="label label--input-checkbox"
-            htmlFor="Small tour group"
-          >
-            Small tour group
-          </label>
-        </div>
-        <div className="wrapper">
-          <input id="Large tour group" type="checkbox" />
-          <label
-            className="label label--input-checkbox"
-            htmlFor="Large tour group"
-          >
-            Large tour group
-          </label>
-        </div>
+        <CheckBox
+          label="Small tour group"
+          id="smallTourGroup"
+          type="checkbox"
+          checked={formData.smallTourGroup}
+          onChange={handleInputChange}
+        />
+        <CheckBox
+          label="Large tour group"
+          type="checkbox"
+          id="largeTourGroup"
+          checked={formData.largeTourGroup}
+          onChange={handleInputChange}
+        />
       </div>
       <Button
         type="submit"

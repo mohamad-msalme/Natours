@@ -1,0 +1,44 @@
+.nav__icon {
+  position: fixed;
+  top: 6%;
+  right: 5%;
+  width: 7rem;
+  height: 7rem;
+  background-color: variables.$white;
+  border-radius: 50%;
+  z-index: 100;
+  cursor: pointer;
+  padding: 1rem;
+  transition: all 0.2s;
+  box-shadow: 0 1rem 2rem rgba(variables.$black, 10%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+
+  &:not(.active):hover {
+    row-gap: 0.8rem;
+  }
+
+  .line {
+    width: 3rem;
+    height: 2px;
+    background-color: variables.$color-grey-dark;
+    transition: all 0.2s;
+    opacity: 1;
+  }
+
+  &.active .line--1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &.active .line--2 {
+    opacity: 0;
+  }
+
+  &.active .line--3 {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}

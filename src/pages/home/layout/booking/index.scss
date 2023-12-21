@@ -31,16 +31,6 @@
         display: flex;
         align-items: center;
         column-gap: 10%;
-
-        .wrapper {
-          display: flex;
-          align-items: center;
-          column-gap: 1rem;
-
-          .label--input-checkbox {
-            font-size: 1.6rem;
-          }
-        }
       }
     }
   }

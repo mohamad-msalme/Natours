@@ -21,7 +21,7 @@ export const useForm = () => {
   const [formData, setFormData] = useState<TFormData>({
     fullName: '',
     emailAddress: '',
-    smallTourGroup: false,
+    smallTourGroup: true,
     largeTourGroup: false
   })
 
