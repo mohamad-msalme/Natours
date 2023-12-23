@@ -1,7 +1,11 @@
 .booking-section {
   @include mixins.sectionBackgroundImage(null);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   .booking {
+    width: 100%;
+    margin: 0 3.2rem;
     padding: 0;
     background-image: linear-gradient(
         105deg,
@@ -31,7 +35,65 @@
         display: flex;
         align-items: center;
         column-gap: 10%;
+        padding-inline-start: 1rem;
       }
+    }
+  }
+}
+
+@include mixins.respond(lg) {
+  .booking-section {
+    .booking {
+      margin: 0 1.5rem;
+      form {
+        padding: 6rem 2.4rem;
+      }
+    }
+  }
+}
+@include mixins.respond(xl) {
+  .booking-section {
+    .booking {
+      background-position: right;
+    }
+  }
+}
+@include mixins.respond(md) {
+  .booking-section {
+    &.p-section {
+      padding: 4.6rem;
+    }
+
+    .booking {
+      background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 255, 255, 0.9)
+        ),
+        url(http://localhost:3000/assets/images/nat-10.jpg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      form {
+        width: 90%;
+        .btn {
+          align-self: center;
+        }
+      }
+    }
+  }
+}
+
+@include mixins.respond(xs) {
+  .booking-section {
+    .booking {
+      background-position: unset;
+      form {
+        width: 100%;
+      }
+    }
+    &.p-section {
+      padding: 4.6rem 0;
     }
   }
 }

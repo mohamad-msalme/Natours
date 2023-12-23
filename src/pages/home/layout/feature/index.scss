@@ -1,18 +1,48 @@
-.feature {
-  height: 95vh;
+.feature-section {
+  padding: 20rem 0;
   @include mixins.sectionBackgroundImage('nat-4');
   clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0 100%);
   background-size: cover;
   background-position: top;
-
-  .container {
-    height: 100%;
+  display: flex;
+  align-items: center;
+  .feature {
     display: flex;
-    align-items: center;
+    column-gap: 3.2rem;
+  }
+}
 
-    div {
-      display: flex;
-      column-gap: 3.2rem;
+@include mixins.respond(md) {
+  .feature-section {
+    clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0 100%);
+
+    @include mixins.sectionBackgroundImage('nat-4');
+    .feature {
+      column-gap: 6.4rem;
+      row-gap: 3.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      & .feature__card {
+        flex-basis: 30rem;
+      }
+    }
+  }
+}
+
+@include mixins.respond(sm) {
+  .feature-section {
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%);
+
+    @include mixins.sectionBackgroundImage('nat-4');
+    .feature {
+      column-gap: 6.4rem;
+      row-gap: 3.2rem;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      & .feature__card {
+        flex-basis: 0;
+      }
     }
   }
 }

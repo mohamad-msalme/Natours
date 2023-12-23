@@ -11,7 +11,7 @@ import './index.scss'
 
 export const Testimonials: React.FC = () => {
   return (
-    <div className="testimonials">
+    <div id="Testimonials" className="testimonials">
       <div className="testimonials__video">
         <video autoPlay loop muted className="testimonials__video">
           <source src={video}></source>
@@ -22,7 +22,12 @@ export const Testimonials: React.FC = () => {
         {testimonialCardData.map(data => (
           <TestimonialCard key={data.title} {...data} />
         ))}
-        <Button variant="text" color="green" title="Read all stories →" />
+        <Button
+          href="#Header"
+          variant="text"
+          color="green"
+          title="Read all stories →"
+        />
       </div>
     </div>
   )

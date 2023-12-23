@@ -1,13 +1,30 @@
 @use '../abstracts/variables';
-
+@use '../abstracts/mixins';
 html {
-  font-size: 62.52%;
+  font-size: 62.52%; // 1rem = 10px 10px/16px = 62.52%
   font-family: 'Lato', sans-serif;
+  @include mixins.respond(2xl) {
+    font-size: 75%;
+  }
+  @include mixins.respond(xl) {
+    font-size: 56.52%; // 1rem = 9px
+  }
+  @include mixins.respond(lg) {
+    font-size: 50%; // 1rem = 8px
+  }
+  @include mixins.respond(sm) {
+    font-size: 46%; // 1rem = 7px
+  }
+  scroll-behavior: smooth;
 }
 
 body {
   box-sizing: border-box;
   padding: 3rem 3rem 0 3rem;
+
+  @include mixins.respond(sm) {
+    padding: 0;
+  }
 }
 
 #root {

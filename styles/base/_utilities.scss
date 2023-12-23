@@ -1,3 +1,4 @@
+@use '../abstracts/mixins';
 .container {
   margin: 0 auto;
   max-width: 120rem;
@@ -25,4 +26,37 @@
 
 .mb-heading-secondary {
   margin-bottom: 8rem;
+}
+
+@include mixins.respond(lg) {
+  .container {
+    padding: 0 4.6rem;
+  }
+  .p-section {
+    padding: 4.8rem 0;
+  }
+  .mb-heading-secondary {
+    margin-bottom: 6.2rem;
+  }
+}
+
+@include mixins.respond(md) {
+  .grid--col-2 {
+    grid-template-columns: 1fr;
+  }
+  .grid--col-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .p-section {
+    padding: 3.2rem 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .grid--col-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include mixins.respond(sm) {
 }

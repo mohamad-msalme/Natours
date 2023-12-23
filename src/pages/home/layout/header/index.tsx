@@ -6,7 +6,7 @@ import './index.scss'
 
 export const Header: React.FC = () => {
   return (
-    <header className="header">
+    <header id="Header" className="header">
       <div className="header__logo-box">
         <LogoIcon />
       </div>
@@ -16,6 +16,7 @@ export const Header: React.FC = () => {
           <span className="heading-primary--sub">is where life happenes</span>
         </h1>
         <Button
+          href="#Tours"
           variant="contained"
           color="white"
           title=" Discover our tours"

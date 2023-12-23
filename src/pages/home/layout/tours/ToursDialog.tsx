@@ -7,8 +7,8 @@ import './toursDialog.scss'
 export const ToursDialog: React.FC = () => (
   <div className="tours-dialog">
     <aside className="tours-dialog__aside">
-      <img src={nat8} />
-      <img src={nat9} />
+      <img alt="" loading="lazy" src={nat8} />
+      <img alt="" loading="lazy" src={nat9} />
     </aside>
     <main className="tours-dialog__main">
       <h1 className="heading-secondary">START BOOKING NOW</h1>

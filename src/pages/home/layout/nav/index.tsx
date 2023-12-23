@@ -12,19 +12,29 @@ export const Nav: React.FC = () => {
       <div className={clsx('nav__back', { active: open })}>{''}</div>
       <ul className={clsx('nav__list', { active: open })}>
         <li>
-          <a>About Natous</a>
+          <a href="#About" onClick={() => setOpen(false)}>
+            About Natous
+          </a>
         </li>
         <li>
-          <a>Your benfits</a>
+          <a href="#Feature" onClick={() => setOpen(false)}>
+            Your benfits
+          </a>
         </li>
         <li>
-          <a>Popular tours</a>
+          <a href="#Tours" onClick={() => setOpen(false)}>
+            Popular tours
+          </a>
         </li>
         <li>
-          <a>Stories</a>
+          <a href="#Testimonials" onClick={() => setOpen(false)}>
+            Stories
+          </a>
         </li>
         <li>
-          <a>Book now</a>
+          <a href="#Booking" onClick={() => setOpen(false)}>
+            Book now
+          </a>
         </li>
       </ul>
     </nav>

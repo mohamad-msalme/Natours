@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
     <section className="footer-section p-section">
       <div className="container footer">
         <div className="footer__img-box">
-          <img src={logo} alt="logo" />
+          <img loading="lazy" src={logo} alt="logo" />
         </div>
         <div className="footer__content">
           <div className="footer__content__nav">

@@ -6,11 +6,16 @@ import './index.scss'
 
 export const Tours: React.FC = () => {
   return (
-    <div className="tours p-section">
+    <div id="Tours" className="tours p-section">
       <div className="container grid grid--col-3">
         <h2 className="heading-secondary">Most popular tours</h2>
         <ToursCard items={toursCardData} />
-        <Button variant="contained" color="green" title="Discover all tours" />
+        <Button
+          href="#Header"
+          variant="contained"
+          color="green"
+          title="Discover all tours"
+        />
       </div>
     </div>
   )

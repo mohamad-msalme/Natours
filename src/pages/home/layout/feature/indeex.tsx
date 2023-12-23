@@ -4,11 +4,9 @@ import { FeatureCard } from './FeatureCard'
 
 export const Feature: React.FC = () => {
   return (
-    <div className="feature">
-      <div className="container">
-        <div>
-          <FeatureCard />
-        </div>
+    <div id="Feature" className="feature-section">
+      <div className="container feature">
+        <FeatureCard />
       </div>
     </div>
   )

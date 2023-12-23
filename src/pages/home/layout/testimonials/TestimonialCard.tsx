@@ -10,7 +10,7 @@ export const TestimonialCard: React.FC<TestimonialCardData> = ({
   return (
     <div className="testimonial__card">
       <div className="testimonial__card__img-box">
-        <img src={userImage} />
+        <img alt="" loading="lazy" src={userImage} />
         <p className="testimonial__card__img-box--caption">{userName}</p>
       </div>
       <div className="testimonial__card__text-box">

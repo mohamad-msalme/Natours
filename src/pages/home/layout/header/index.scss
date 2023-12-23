@@ -1,5 +1,5 @@
 .header {
-  height: 95vh;
+  height: 100vh;
   position: relative;
   @include mixins.sectionBackgroundImage('hero');
 
@@ -19,7 +19,7 @@
 
   &__text-box {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -82,5 +82,39 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+@include mixins.respond(sm) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+    &__text-box {
+      .heading-primary {
+        text-align: center;
+        &--main {
+          letter-spacing: 2rem;
+        }
+
+        &--sub {
+          letter-spacing: 1rem;
+        }
+      }
+    }
+  }
+}
+@include mixins.respond(xs) {
+  .header {
+    &__text-box {
+      .heading-primary {
+        &--main {
+          letter-spacing: 1rem;
+        }
+
+        &--sub {
+          letter-spacing: 0.5rem;
+        }
+      }
+    }
   }
 }

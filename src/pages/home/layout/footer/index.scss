@@ -5,7 +5,6 @@
     display: flex;
     flex-direction: column;
     row-gap: 4.2rem;
-    min-height: 30vh;
 
     &__img-box {
       text-align: center;
@@ -20,12 +19,13 @@
       padding-top: 1.6rem;
       display: flex;
       column-gap: 1.6rem;
-      justify-content: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: 3.2rem;
       color: variables.$color-grey-light;
       font-size: 1.4rem;
 
       &__nav {
-        flex: 1;
         ul {
           display: flex;
           column-gap: 2rem;
@@ -41,6 +41,30 @@
               transform: rotate(5deg) scale(1.3);
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@include mixins.respond(sm) {
+  .footer-section {
+    .footer {
+      &__img-box {
+        img {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+@include mixins.respond(xs) {
+  .footer-section {
+    .footer {
+      &__img-box {
+        img {
+          width: 50%;
         }
       }
     }

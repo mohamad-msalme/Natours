@@ -54,3 +54,17 @@
     transform: translate(-50%, -50%);
   }
 }
+
+@include mixins.respond(xs) {
+  .testimonial__card {
+    transform: skewX(0);
+
+    &__text-box {
+      transform: skewX(0);
+    }
+
+    &__img-box {
+      transform: skewX(0) translateX(-2rem);
+    }
+  }
+}

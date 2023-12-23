@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 import React from 'react'
 
 import { Button } from 'components/button'
@@ -11,7 +10,13 @@ export const Form: React.FC = () => {
     useForm()
 
   return (
-    <form className="cta-form" onSubmit={handleSubmit}>
+    <form
+      method="POST"
+      data-netlify="true"
+      name="contact"
+      className="cta-form"
+      onSubmit={handleSubmit}
+    >
       <h2 className="heading-secondary">Start booking now</h2>
       <TextInput
         value={formData.fullName}
@@ -21,6 +26,7 @@ export const Form: React.FC = () => {
         required
         id="fullName"
         type="text"
+        name="user name"
         label={
           isDirty.fullName && !formData.fullName.trim()
             ? 'Please enter your full name'
@@ -34,6 +40,7 @@ export const Form: React.FC = () => {
         placeholder="Email address"
         required
         id="emailAddress"
+        name="user email"
         type="email"
         label={
           isDirty.emailAddress && !isEmailValid(formData.emailAddress)
@@ -48,6 +55,7 @@ export const Form: React.FC = () => {
           type="checkbox"
           checked={formData.smallTourGroup}
           onChange={handleInputChange}
+          name="small_tour_group" // Make it unique
         />
         <CheckBox
           label="Large tour group"
@@ -55,8 +63,11 @@ export const Form: React.FC = () => {
           id="largeTourGroup"
           checked={formData.largeTourGroup}
           onChange={handleInputChange}
+          name="large_tour_group" // Make it unique
         />
       </div>
+      <input type="hidden" name="bot-field" />
+
       <Button
         type="submit"
         variant="contained"

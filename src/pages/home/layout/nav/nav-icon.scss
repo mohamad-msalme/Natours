@@ -1,7 +1,7 @@
 .nav__icon {
   position: fixed;
-  top: 6%;
-  right: 5%;
+  top: 7rem;
+  right: 5rem;
   width: 7rem;
   height: 7rem;
   background-color: variables.$white;
@@ -40,5 +40,40 @@
 
   &.active .line--3 {
     transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+@include mixins.respond(lg) {
+  .nav__icon {
+    &.active .line--1 {
+      transform: rotate(45deg) translate(5px, 4px);
+    }
+    &.active .line--3 {
+      transform: rotate(-45deg) translate(5px, -4px);
+    }
+  }
+}
+@include mixins.respond(sm) {
+  .nav__icon {
+    right: 3rem;
+    top: 5rem;
+
+    &.active .line--1 {
+      transform: rotate(45deg) translate(4px, 4px);
+    }
+    &.active .line--3 {
+      transform: rotate(-45deg) translate(4px, -4px);
+    }
+  }
+}
+
+@include mixins.respond(xs) {
+  .nav__icon {
+    &.active .line--1 {
+      transform: rotate(45deg) translate(3.5px, 4px);
+    }
+    &.active .line--3 {
+      transform: rotate(-45deg) translate(3.5px, -4px);
+    }
   }
 }
